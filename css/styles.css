@@ -740,7 +740,6 @@ address {
   align-items: center;
   gap: 16px 32px;
   width: 169px;
-  margin-top: 24px;
   border: 0;
   background-color: var(--primary);
   color: var(--background-white);
