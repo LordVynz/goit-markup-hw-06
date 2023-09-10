@@ -617,6 +617,7 @@ address {
 .modal-content{
   position: relative;
   display: flex;
+  flex-direction: column;
   align-items: center;
   width: 408px;
   height: 584px;
@@ -649,7 +650,8 @@ address {
 .close-icon {
   width: 100%;
   height: 100%;
-  margin-top: 12px;
+  padding-top: 7px;
+  padding-left: 1px;
   fill: var(--dark);
   
 
@@ -661,6 +663,62 @@ address {
 .close-icon:active{
   fill: var(--background-white);
 }
+
+.form-title {
+  display: flex;
+  text-align: center;
+    /* Body Medium */
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    color: var(--dark);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.2px;
+    letter-spacing: 0.32px;
+    margin: 0;
+    padding: 50px 0 20px 0;
+  
+}
+
+.signup_form{
+  display: flex;
+  width: 360px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  border-radius: 4px;
+}
+
+.signup_form .forminput{
+  width: 360px;
+  height: 40px;
+  padding-left: 30px;
+}
+.signup_form input:nth-child(n+7){
+  width: 100%;
+  height: 120px;
+  padding-left: 16px;
+  padding-bottom: 80px;
+}
+
+.input{
+  position: relative;
+  text-underline-offset: 10px;
+}
+
+.input svg{
+  position: absolute;
+  left: 10px;
+  top: 22px;
+  transform: translateY(-50%); 
+  width: 18px;
+  height: 24px;
+}
+
+
+
+
+
 
 
 
