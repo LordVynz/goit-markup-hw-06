@@ -380,7 +380,7 @@
                     </svg>
                 </button>
                 <p class="form-title">Leave your contacts and we will call you back</p>
-                <form class="signup_form" name="signup_form" autocomplete="off" novalidate>
+                <form class="signup_form" name="signup_form" method="POST" novalidate>
                     <div class="input-group">
                         <label>Name</label>
                         <div class="input-field">
@@ -421,8 +421,11 @@
                             <a class="form-terms" href="#">Privacy Policy</a>
                         </span>
                     </label>
+                    <div class="modalsubmit">
+                        <button type="submit">Send</button>
+                    </div>
+                    
                 </form>
-                <button class="modalsubmit" type="submit">Send</button>
             </div>
         </div>
     </div>
