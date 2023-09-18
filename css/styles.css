@@ -15,10 +15,10 @@
 }
 
 body {
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
   font-family: 'Roboto', sans-serif;
   background-color: var(--background-white);
   color: var(--primary-text);
@@ -123,7 +123,6 @@ address {
 
 .page-header {
   border-bottom: 1px solid #ececec;
-  width: 1440px;
 }
 
 .menu,
@@ -165,7 +164,8 @@ address {
 .nav-menu .page:focus,
 .contacts-menu .contact:hover,
 .contacts-menu .contact:focus {
-  color: var(--cta)
+  color: var(--cta);
+  transition: all var(--timing-function) var(--transition-time);
 }
 
 /* underlined effects */
@@ -184,6 +184,7 @@ address {
   width: 100%;
   height: 4px;
   background-color: var(--cta);
+  transition: all var(--timing-function) var(--transition-time);
 }
 
 
@@ -201,8 +202,7 @@ address {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  width: 1440px;
-  height: 600px;
+  margin: 0 auto;
   padding-top: 188px;
   padding-bottom: 188px;
 }
@@ -234,6 +234,7 @@ address {
   line-height: 1.87;
   letter-spacing: 0.06em;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+  transition: all var(--timing-function) var(--transition-time);
 }
 
 .button.order:hover,
@@ -323,6 +324,7 @@ address {
   width: 40px;
   height: 40px;
   border-radius: 50%;
+  transition: all var(--transition-time) var(--timing-function);
   cursor: pointer;
 }
 
@@ -338,12 +340,9 @@ address {
 /*customers*/
 
 .customers {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 32px;
-  padding: 120px 15px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 0;
 }
 
 .customers-title {
@@ -355,10 +354,13 @@ address {
 }
 
 .customers-list {
-  width: 100%;
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
   gap: 24px;
+}
+
+.customers-list .customers-list-item {
+  flex-basis: calc((100% - 120px) / 6);
 }
 
 .customers-list-item {
@@ -373,7 +375,6 @@ address {
   cursor: pointer;
 }
 
-
 .customers-list-item-img {
   width: 100%;
   fill: var(--lightscale);
@@ -383,8 +384,9 @@ address {
   border: 1px solid var(--cta);
 }
 
-.customers-list-item-img:hover {
+.customers-list-item:hover svg {
   fill: var(--cta);
+  transition: all var(--transition-time) var(--timing-function);
 }
 
 /* portfolio */
@@ -443,7 +445,7 @@ address {
   flex-shrink: 0;
   background-color: var(--primary);
   transform: translatey(100%);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform var(--timing-function) var(--transition-time);
 }
 
 .cards:hover .overlay {
@@ -489,6 +491,7 @@ address {
   font-weight: 500;
   list-style: none;
   cursor: pointer;
+  transition: all var(--transition-time) var(--timing-function);
 }
 
 .selects:hover,
@@ -517,30 +520,33 @@ address {
 
 /* footer */
 
-.page-footer {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  background-color: var(--background-grey);
-  width: 1440px;
-  height: 312px;
-  padding: 100px 156px;
-  gap: 120px;
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 20px;
 }
+
+.page-footer {
+  background-color: var(--background-grey);
+  width: 100%;
+}
+
 
 .footerlogo {
   font-family: 'Roboto', sans-serif;
   font-style: normal;
+  list-style: none;
   gap: 8px;
 
 }
 
-.footerlogo p {
+.footer-items p {
   font-size: 16px;
   color: var(--accent-color);
   line-height: 1.2;
   width: 264px;
   letter-spacing: 0.32px;
+  margin: 0 auto;
 }
 
 .footer-items {
@@ -549,7 +555,7 @@ address {
   gap: 8px;
 }
 
-.footer-items h3{
+.footer-items h3 {
   font-size: 16px;
   color: var(--background-white);
   font-family: 'Roboto', sans-serif;
@@ -557,6 +563,12 @@ address {
   font-weight: 500;
   line-height: 1.2;
   letter-spacing: 0.32px;
+}
+
+.footer-lists {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
 }
 
 .footer-list {
@@ -579,6 +591,7 @@ address {
   padding: 8px;
   background: var(--cta);
   border-radius: 50%;
+  transition: all var(--transition-time) var(--timing-function);
   cursor: pointer;
 }
 
@@ -596,7 +609,6 @@ address {
   display: flex;
   align-items: flex-start;
   gap: 16px;
-  margin-top: 8px;
 }
 
 .footer-form input {
@@ -607,8 +619,8 @@ address {
   color: var(--background-white);
   background: transparent;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
-  transition: all var(--transition-time) var(--timing-function);
-}  
+  transition: all var(--timing-function);
+}
 
 .footer-form input::placeholder {
   color: var(--background-white);
@@ -616,7 +628,7 @@ address {
   letter-spacing: 0.48px;
 }
 
-button{
+button {
   border: none;
   outline: none;
 }
@@ -631,7 +643,7 @@ button{
   color: var(--background-white);
   background: var(--primary);
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
-  transition: all var(--transition-time) var(--transition-duration);
+  transition: all var(--transition-time) var(--timing-function);
   cursor: pointer;
 }
 
@@ -680,6 +692,7 @@ button{
   align-items: center;
   width: 408px;
   height: 584px;
+  padding: 72px 24px 24px 24px;
   border-radius: 4px;
   background: var(--dairy);
   box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.20),
@@ -704,6 +717,7 @@ button{
   margin-top: 10px;
   margin-right: 10px;
   cursor: pointer;
+  transition: all var(--transition-time) var(--timing-function);
 }
 
 .close-icon {
@@ -716,11 +730,13 @@ button{
 
 }
 
-.modal-close:active {
+.modal-close:active,
+.modal-close:hover {
   background-color: var(--cta);
 }
 
-.close-icon:active {
+.close-icon:active,
+.modal-close:hover svg {
   fill: var(--background-white);
 }
 
@@ -736,7 +752,6 @@ button{
   line-height: 1.2px;
   letter-spacing: 0.32px;
   margin: 0;
-  padding: 50px 0 20px 0;
 }
 
 .signup_form {
@@ -760,7 +775,7 @@ button{
   height: 120px;
   border-radius: 4px;
   font-family: 'Roboto', sans-serif;
-  border: 1px solid var(--background-grey);
+  border: 1px solid var(--lightscale);
   padding-left: 10px;
   padding-top: 10px;
   resize: none;
@@ -789,7 +804,7 @@ button{
 
 .input-group .input-field {
   border-radius: 4px;
-  border: 1px solid var(--background-grey, rgba(46, 47, 66, 0.40));
+  border: 1px solid var(--lightscale);
 }
 
 .input-field svg {
@@ -827,7 +842,7 @@ button{
 .form-checkbox-icon {
   position: absolute;
   left: 24px;
-  bottom: 122px;
+  bottom: 118px;
   fill: none;
   border: 2px solid rgba(46, 47, 66, 0.40);
   border-radius: 2px;
@@ -837,7 +852,7 @@ button{
   cursor: pointer;
 }
 
-.form-checkbox:checked + .form-checkbox-icon {
+.form-checkbox:checked+.form-checkbox-icon {
   background-color: var(--cta);
   fill: var(--background-white);
 }
@@ -854,12 +869,13 @@ button{
 }
 
 .modalsubmit {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.modalsubmit button{
+
+.modalsubmit button {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -873,7 +889,6 @@ button{
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
   margin-top: 30px;
   transition: all var(--transition-time) var(--timing-function);
-  margin-top: 15px;
   cursor: pointer;
 }
 
@@ -884,4 +899,3 @@ button{
 .modalsubmit button:active {
   background: var(--mint);
 }
-
